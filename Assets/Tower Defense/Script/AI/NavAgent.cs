@@ -53,7 +53,7 @@ public class NavAgent : MonoBehaviour
         SetSpriteDirection(target.position - transform.position);
 	}
 
-    public void LookAtTaregt(Vector2 direction)
+    public void LookAtTarget(Vector2 direction)
 	{
         SetSpriteDirection(direction);
 	}

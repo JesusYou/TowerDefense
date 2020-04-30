@@ -98,7 +98,7 @@ public class SpawnPoint : MonoBehaviour
                 //创建敌人
                 GameObject newEnemy = Instantiate(prefab, transform.position, transform.rotation);
                 //设置路径
-                newEnemy.GetComponent<AIStatePatrol>().path = path;
+                newEnemy.GetComponent<AIStatePatrol>().pathway = path;
                 NavAgent agent = newEnemy.GetComponent<NavAgent>();
                 agent.speed = Random.Range(agent.speed * (1f - speedRandomizer), agent.speed * (1f + speedRandomizer));
                 //把创建的敌人添加的行动列表中

@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIStatePatrol : AISate
+public class AIStatePatrol : AIState
 {
     [Space(10)]
-    [HideInInspector] public Pathway path;
+    [HideInInspector] public Pathway pathway;
+    public bool loop = false;
+    private NavAgent navAgent;
+    private WayPoint destination;
+
+    public override void Awake()
+	{
+        base.Awake();
+        navAgent = GetComponent<NavAgent>();
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -18,4 +27,52 @@ public class AIStatePatrol : AISate
     {
         
     }
+
+    void FixedUpdate()
+	{
+        if (destination != null)
+		{
+            //如果到达目的地
+            if ((Vector2) destination.transform.position == (Vector2)transform.position)
+			{
+                destination = pathway.GetNextWayPoint(destination, loop);
+                if (destination != null)
+				{
+                    navAgent.destination = destination.transform.position;
+				}
+			}
+		}
+	}
+
+    public override void OnStateEnter(AIState previousState, AIState newState)
+	{
+        if (pathway == null)
+		{
+            pathway = FindObjectOfType<Pathway>();
+		}
+        if (destination == null)
+		{
+            //获取下一个节点
+		}
+        navAgent.destination = destination.transform.position;
+        navAgent.move = true;
+        navAgent.turn = true;
+        if (_animator != null)
+		{
+            _animator.SetTrigger("move");
+		}
+	}
+
+    public override void OnStateExit(AIState previousState, AIState newState)
+	{
+        navAgent.move = false;
+        navAgent.turn = false;
+	}
+
+    //获取路径上剩下的距离
+    public float GetRemainingPath()
+	{
+        Vector2 distance = destination.transform.position - transform.position;
+        return (distance.magnitude + pathway.GetPathDistance(destination));
+	}
 }
