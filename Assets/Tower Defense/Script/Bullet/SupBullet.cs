@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupBullet : MonoBehaviour
+public class SupBullet : MonoBehaviour, Bullet
 {
     public int damage = 2;
     //子弹最大存活时间

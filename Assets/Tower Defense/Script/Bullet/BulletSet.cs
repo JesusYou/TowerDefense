@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BulletSet : MonoBehaviour
+public class BulletSet : MonoBehaviour, Bullet
 {
     public int damage = 1;
     //子弹最长存活时间
