@@ -5,10 +5,10 @@ using UnityEngine;
 public class AirStrike : MonoBehaviour
 {
     public float[] delayDamage = { 0.5f };
-    public int damage = 5;
+    public int damage = 10;
     public float radius = 1f;
     public GameObject effectPrefab;
-    public float effectDuration = 2f;
+    public float effectDuration = 3f;
     private enum MyState
 	{
         WaitForClick,
