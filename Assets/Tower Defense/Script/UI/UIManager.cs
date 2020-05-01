@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 				{
                     foreach (RaycastResult res in results)
 					{
-						if (res.gameObject.CompareTag("SkillIcon"))
+						if (res.gameObject.CompareTag("ActionIcon"))
 						{
 							hittedObj = res.gameObject;
 							break;
