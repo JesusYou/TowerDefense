@@ -92,7 +92,7 @@ public class WaveTimer : MonoBehaviour
         return res;
 	}
 
-    private IEnumerable HighLightTime()
+    private IEnumerator HighLightTime()
 	{
         highLightFX.SetActive(true);
         yield return new WaitForSeconds(highLightTime);
