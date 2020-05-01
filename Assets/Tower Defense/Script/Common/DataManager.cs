@@ -13,7 +13,7 @@ public class DataVersion
 }
 
 //存储游戏的进度
-[System.Serializable]
+[Serializable]
 public class GameProgressData
 {
     //保存时间
@@ -34,7 +34,7 @@ public class DataManager : MonoBehaviour
     //保存数据格式版本的文件名
     private string dataVersionFile = "/DataVersion.dat";
     //保存游戏进度数据的文件名
-    private string gameProgressDataFile = "/GameProgressData";
+    private string gameProgressDataFile = "/GameProgressData.dat";
     //数据格式版本容器
     private DataVersion dataVersion = new DataVersion();
     //默认游戏进度数据的容器
