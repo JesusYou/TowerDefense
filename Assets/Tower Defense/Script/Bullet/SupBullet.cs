@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SupBullet : MonoBehaviour, Bullet
 {
-    public int damage = 2;
+    [HideInInspector] public int damage = 2;
     //子弹最大存活时间
     public float lifeTime = 5f;
     public float speed = 6f;

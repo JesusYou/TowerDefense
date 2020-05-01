@@ -5,15 +5,15 @@ using UnityEngine.AI;
 
 public class BulletSet : MonoBehaviour, Bullet
 {
-    public int damage = 1;
+    [HideInInspector] public int damage = 1;
     //子弹最长存活时间
-    public float liftTime = 5f;
+    public float lifeTime = 5f;
     //子弹速度
-    public float speed = 3f;
+    public float speed = 6f;
     //子弹加速度
     public float acceleration = 0.5f;
     //销毁距离
-    public float hitDistance = 0.2f;
+    public float hitDistance = 0.1f;
     //弹道偏移
     public float ballisticOffset = 0.5f;
     //飞行中自动是否旋转
@@ -101,7 +101,7 @@ public class BulletSet : MonoBehaviour, Bullet
         firePosition = currentPosition = previousPosition = transform.position;
         this.target = target;
         targetPosition = target.position;
-        Destroy(gameObject, liftTime);
+        Destroy(gameObject, lifeTime);
     }
     
     //子弹偏移    

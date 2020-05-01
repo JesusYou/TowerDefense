@@ -5,7 +5,7 @@ using UnityEngine;
 public class AOEDamage : MonoBehaviour
 {
     //AOE伤害比
-    public float aoeDamageRate = 1.5f;
+    public float aoeDamageRate = 1f;
     //AOE半径
     public float radius = 0.5f;
     public GameObject explosion;
