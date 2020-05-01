@@ -55,7 +55,7 @@ public class WaveTimer : MonoBehaviour
                 if (GetCurrentWaveCounter() == false)
 				{
                     finished = true;
-                    EventManager.TriggerEvent("timerEnd", null, null);
+                    EventManager.TriggerEvent("TimerEnd", null, null);
                     return;
 				}
 			}
@@ -96,6 +96,6 @@ public class WaveTimer : MonoBehaviour
 	{
         highLightFX.SetActive(true);
         yield return new WaitForSeconds(highLightTime);
-        highLightFX.SetActive(true);
+        highLightFX.SetActive(false);
 	}
 }
