@@ -21,7 +21,17 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiManager = FindObjectOfType<UIManager>();
+        Canvas[] canvases = Resources.FindObjectsOfTypeAll<Canvas>();
+        foreach (Canvas _canvas in canvases)
+		{
+            if (_canvas.CompareTag("FightUI"))
+			{
+                canvas = _canvas;
+                break;
+			}
+		}
+        bodyCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
