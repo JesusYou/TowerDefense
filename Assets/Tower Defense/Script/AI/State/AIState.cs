@@ -57,7 +57,6 @@ public class AIState : MonoBehaviour
     public virtual bool OnTrigger(Trigger trigger, Collider2D mycol, Collider2D other)
 	{
         bool res = false;
-        return res;
         foreach (AITransaction aiTransaction in specificTransaction)
 		{
             if (trigger == aiTransaction.trigger)

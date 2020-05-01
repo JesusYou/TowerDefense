@@ -41,7 +41,7 @@ public class NavAgent : MonoBehaviour
         //计算速度
         Vector2 velocity = (Vector2)transform.position - previousPosition;
         velocity /= Time.fixedDeltaTime;
-        if (turn = true)
+        if (turn == true)
 		{
             SetSpriteDirection(destination - (Vector2)transform.position);
 		}

@@ -117,9 +117,9 @@ public class UIManager : MonoBehaviour
 	}
 
     //设置允许通关的敌人数量的text
-    public void SetDefeatCounts(int counts)
+    public void SetDefeatCounts(int count)
 	{
-        defeatCounts.text = counts.ToString();
+        defeatCounts.text = count.ToString();
 	}
 
     //花费金币

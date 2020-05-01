@@ -51,7 +51,7 @@ public class Pathway : MonoBehaviour
 		{
             idx = 0;
 		}
-        if (loop != false || idx != 0)
+        if (!(loop == false && idx == 0))
 		{
             res = transform.GetChild(idx).GetComponent<WayPoint>();
 		}

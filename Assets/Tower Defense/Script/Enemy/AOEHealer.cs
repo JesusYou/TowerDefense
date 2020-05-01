@@ -64,7 +64,7 @@ public class AOEHealer : MonoBehaviour
 		{
             res = true;
 		}
-        return false;
+        return res;
 	}
 
     //治愈半径内全部目标
