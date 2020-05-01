@@ -10,7 +10,7 @@ public class WaveTimer : MonoBehaviour
     public Text currentWaveNumberText;
     public Text maxWaveNumberText;
     public GameObject highLightFX;
-    public float highLightTime = 0.2f;
+    public float highLightTime = 0.5f;
     private WaveInfo waveInfo;
     private List<float> waves = new List<float>();
     private int currentWave;
