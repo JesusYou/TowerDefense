@@ -7,8 +7,8 @@ public class AIStatePatrol : AIState
     [Space(10)]
     [HideInInspector] public Pathway pathway;
     public bool loop = false;
-    private NavAgent navAgent;
     private WayPoint destination;
+    NavAgent navAgent;
 
     public override void Awake()
 	{
@@ -33,7 +33,7 @@ public class AIStatePatrol : AIState
         if (destination != null)
 		{
             //如果到达目的地
-            if ((Vector2) destination.transform.position == (Vector2)transform.position)
+            if ((Vector2) destination.transform.position == (Vector2) transform.position)
 			{
                 destination = pathway.GetNextWayPoint(destination, loop);
                 if (destination != null)

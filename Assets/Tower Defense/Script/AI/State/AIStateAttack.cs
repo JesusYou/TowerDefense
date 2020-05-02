@@ -13,8 +13,8 @@ public class AIStateAttack : AIState
     private Attack attackMelee;
     private Attack attackRange;
     private Attack lastAttack;
-    private NavAgent navAgent;
     private bool targetState;
+    NavAgent navAgent;
 
     public override void Awake()
 	{

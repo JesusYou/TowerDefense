@@ -36,15 +36,18 @@ public class SkillIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (coolDownCounter > 0f)
-		{
-            coolDownCounter -= Time.deltaTime;
-            UpdateCoolDownText();
-		}
-		else if (coolDownCounter <= 0f)
-		{
-            StopCoolDown();
-		}
+        if (myState == MyState.CoolDown)
+        {
+            if (coolDownCounter > 0f)
+            {
+                coolDownCounter -= Time.deltaTime;
+                UpdateCoolDownText();
+            }
+            else if (coolDownCounter <= 0f)
+            {
+                StopCoolDown();
+            }
+        }
     }
 
     void OnDisable()

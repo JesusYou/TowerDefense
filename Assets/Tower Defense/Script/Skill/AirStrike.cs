@@ -56,7 +56,7 @@ public class AirStrike : MonoBehaviour
             //点击目标不是塔
             if (obj == null || obj.CompareTag("Tower") == false)
 			{
-                transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
                 Destroy(effect, effectDuration);
                 EventManager.TriggerEvent("ActionStart", gameObject, null);

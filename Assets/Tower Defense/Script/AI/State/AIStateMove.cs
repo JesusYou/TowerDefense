@@ -6,7 +6,7 @@ public class AIStateMove : AIState
 {
     [Space(10)] public Transform destination;
     public AIState aiState;
-    private NavAgent navAgent;
+    NavAgent navAgent;
 
     public override void Awake()
 	{
