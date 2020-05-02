@@ -11,11 +11,20 @@ public class Pathway : MonoBehaviour
         
     }
 
+    #if UNITY_EDITOR
     // Update is called once per frame
     void Update()
     {
-        
+        WayPoint[] wayPoints = GetComponentsInChildren<WayPoint>();
+        if (wayPoints.Length > 1) {
+            int idx;
+            for (idx = 1; idx < wayPoints.Length; idx++)
+            {
+                Debug.DrawLine(wayPoints[idx - 1].transform.position, transform.position, new Color(1f, 0f, 0f));
+            }
+        }
     }
+    #endif
 
     //获取到指定节点的最短路径
     public WayPoint GetNearestWayPoint(Vector3 position)
@@ -64,8 +73,9 @@ public class Pathway : MonoBehaviour
         WayPoint[] wayPoints = GetComponentsInChildren<WayPoint>();
         bool hitted = false;
         float pathDistance = 0f;
+        int idx;
         //计算剩余路径
-        for (int idx = 0; idx < wayPoints.Length; ++idx)
+        for (idx = 0; idx < wayPoints.Length; ++idx)
 		{
             if (hitted == true)
 			{
