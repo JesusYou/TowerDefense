@@ -69,7 +69,7 @@ public class SpawnSoldier : MonoBehaviour
         List<Transform> points = defendPoint.GetDefendPoint();
         foreach (Transform point in points)
 		{
-            if (soldiersList.ContainsValue(point) == true)
+            if (soldiersList.ContainsValue(point) == false)
 			{
                 res = point;
                 break;
