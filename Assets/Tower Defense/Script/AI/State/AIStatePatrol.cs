@@ -53,6 +53,7 @@ public class AIStatePatrol : AIState
         if (destination == null)
 		{
             //获取下一个节点
+            destination = pathway.GetNearestWayPoint(transform.position);
 		}
         navAgent.destination = destination.transform.position;
         navAgent.move = true;
