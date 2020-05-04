@@ -16,7 +16,7 @@ public class AirStrike : MonoBehaviour
 	}
     private MyState myState = MyState.WaitForClick;
 
-    void OnEable()
+    void OnEnable()
 	{
         EventManager.StartListening("UserClick", UserClick);
         EventManager.StartListening("UserUIClick", UserUIClick);
