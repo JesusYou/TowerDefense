@@ -26,8 +26,20 @@ public class AIBehavior : MonoBehaviour
 				{
                     ChangeState(currentState);
 				}
+                else
+                {
+                    Debug.LogError("Incorrect default state " + defaultState);
+                }
 			}
+            else
+            {
+                Debug.LogError("AI have no default state");
+            }
 		}
+        else
+        {
+            Debug.LogError("No AI states found");
+        }
     }
 
     // Update is called once per frame

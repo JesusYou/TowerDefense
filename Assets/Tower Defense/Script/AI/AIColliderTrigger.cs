@@ -11,7 +11,8 @@ public class AIColliderTrigger : MonoBehaviour
     void Awake()
 	{
         col = GetComponent<Collider2D>();
-        aiBehavior = GetComponent<AIBehavior>();
+        aiBehavior = GetComponentInParent<AIBehavior>();
+        Debug.Assert(aiBehavior, "Wrong initial parameters");
         col.enabled = false;
 	}
 
@@ -43,7 +44,7 @@ public class AIColliderTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerExitr2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (IsTagAllowed(other.tag) == true)
         {

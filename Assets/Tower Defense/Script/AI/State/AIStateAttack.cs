@@ -22,7 +22,8 @@ public class AIStateAttack : AIState
         attackMelee = GetComponentInChildren<AttackMelee>() as Attack;
         attackRange = GetComponentInChildren<AttackRange>() as Attack;
         navAgent = GetComponent<NavAgent>();
-	}
+        Debug.Assert(attackMelee != null || attackRange != null, "Wrong initial parameters");
+    }
 
     // Start is called before the first frame update
     void Start()

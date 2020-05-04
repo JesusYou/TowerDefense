@@ -49,7 +49,8 @@ public class AIStatePatrol : AIState
         if (pathway == null)
 		{
             pathway = FindObjectOfType<Pathway>();
-		}
+            Debug.Assert(pathway, "Have no path");
+        }
         if (destination == null)
 		{
             //获取下一个节点
