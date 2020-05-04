@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
 					}
 					EventManager.TriggerEvent("UserUIClick", hittedObj, null);
 				}
+                //如果不是指在UI组件上
 				else
 				{
 					RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward);

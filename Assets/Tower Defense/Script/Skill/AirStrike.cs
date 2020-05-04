@@ -8,7 +8,7 @@ public class AirStrike : MonoBehaviour
     public int damage = 10;
     public float radius = 1f;
     public GameObject effectPrefab;
-    public float effectDuration = 3f;
+    public float effectDuration = 2f;
     private enum MyState
 	{
         WaitForClick,
@@ -25,7 +25,7 @@ public class AirStrike : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Assert(effectPrefab, "Wrong initial settings");
     }
 
     // Update is called once per frame
