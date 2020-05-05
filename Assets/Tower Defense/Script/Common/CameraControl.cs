@@ -13,6 +13,7 @@ public class CameraControl : MonoBehaviour
     }
 
     public ControlType controlType;
+    //相机自适应对象
     public SpriteRenderer focusObject;
     public float offsetX = 1f;
     public float offsetY = 1f;
@@ -90,7 +91,7 @@ public class CameraControl : MonoBehaviour
                 //获取上移许可
                 if (moveY > 0f)
                 {
-                    if (_camera.transform.position.y + (_camera.orthographicSize * _camera.aspect) < maxY - offsetY)
+                    if (_camera.transform.position.y + _camera.orthographicSize < maxY - offsetY)
                     {
                         permit = true;
                     }
@@ -98,7 +99,7 @@ public class CameraControl : MonoBehaviour
                 //获取下移许可
                 else
                 {
-                    if (_camera.transform.position.y - (_camera.orthographicSize * _camera.aspect) > minY + offsetY)
+                    if (_camera.transform.position.y - _camera.orthographicSize > minY + offsetY)
                     {
                         permit = true;
                     }
