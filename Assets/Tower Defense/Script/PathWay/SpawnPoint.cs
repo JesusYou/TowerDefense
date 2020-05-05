@@ -87,6 +87,7 @@ public class SpawnPoint : MonoBehaviour
             foreach (GameObject enemy in waves[waveIdx].enemies)
 			{
                 GameObject prefab = null;
+                prefab = enemy;
                 //如果未指定，随机生成
                 if (prefab == null && randomEnemiesList.Count > 0)
 				{
