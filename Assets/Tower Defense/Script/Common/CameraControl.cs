@@ -133,7 +133,7 @@ public class CameraControl : MonoBehaviour
                 _camera.orthographicSize = (maxX - minX - 2 * offsetX) / (2f * _camera.aspect);
                 break;
             case ControlType.HeightParam:
-                _camera.orthographicSize = (maxY - minY - 2 * offsetY) / (2f * _camera.aspect);
+                _camera.orthographicSize = (maxY - minY - 2 * offsetY) / 2f;
                 break;
         }
     }
