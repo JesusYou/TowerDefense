@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class SupBullet : MonoBehaviour, Bullet
 {
-    [HideInInspector] public int damage = 2;
+    [HideInInspector] public int damage = 1;
     //子弹最大存活时间
     public float lifeTime = 5f;
     public float speed = 6f;
     public float acceleration = 0.5f;
     //销毁距离
-    public float hitDistance = 0.2f;
+    public float hitDistance = 0.1f;
     //子弹偏移
     public float ballisticOffset = 0.1f;
-    public float penetrationRatio = 0.3f;
+    public float penetrationRatio = 0.5f;
     private Vector2 firePosition;
     private Transform target;
     //目标位置
