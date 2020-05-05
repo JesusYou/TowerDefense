@@ -47,14 +47,17 @@ public class SpawnSoldier : MonoBehaviour
     void FixedUpdate()
 	{
         coolDownCounter += Time.fixedDeltaTime;
-        if (TryToSpawn() == true)
-		{
-            coolDownCounter = 0f;
-		}
-        else
-		{
-            coolDownCounter = coolDown;
-		}
+        if (coolDownCounter >= coolDown)
+        {
+            if (TryToSpawn() == true)
+            {
+                coolDownCounter = 0f;
+            }
+            else
+            {
+                coolDownCounter = coolDown;
+            }
+        }
 	}
 
     void OnDisable()

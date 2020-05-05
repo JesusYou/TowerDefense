@@ -59,7 +59,7 @@ public class AttackRange : MonoBehaviour, Attack
             mybullet.Fire(target);
             if (_animator != null)
 			{
-                _animator.SetTrigger("attackrange");
+                _animator.SetTrigger("attackRanged");
 			}
 		}
 	}
