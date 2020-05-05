@@ -49,7 +49,7 @@ public class AIStatePatrol : AIState
         if (pathway == null)
 		{
             pathway = FindObjectOfType<Pathway>();
-            Debug.Assert(pathway, "Have no path");
+            Debug.Assert(pathway, "Have no Pathway");
         }
         if (destination == null)
 		{

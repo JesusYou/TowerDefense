@@ -19,7 +19,7 @@ public class SpawnPoint : MonoBehaviour
     [HideInInspector] public List<GameObject> randomEnemiesList = new List<GameObject>();
 
     //敌人前进的路线
-    private Pathway path;
+    private Pathway pathway;
     private float counter;
     private List<GameObject> activeEnemies = new List<GameObject>();
     //所有敌人是否生成完毕
@@ -27,7 +27,7 @@ public class SpawnPoint : MonoBehaviour
 
     void Awake()
 	{
-        path = GetComponentInParent<Pathway>();
+        pathway = GetComponentInParent<Pathway>();
 	}
 
     void OnEnable()
@@ -99,7 +99,7 @@ public class SpawnPoint : MonoBehaviour
                 //创建敌人
                 GameObject newEnemy = Instantiate(prefab, transform.position, transform.rotation);
                 //设置路径
-                newEnemy.GetComponent<AIStatePatrol>().pathway = path;
+                newEnemy.GetComponent<AIStatePatrol>().pathway = pathway;
                 NavAgent agent = newEnemy.GetComponent<NavAgent>();
                 agent.speed = Random.Range(agent.speed * (1f - speedRandomizer), agent.speed * (1f + speedRandomizer));
                 //把创建的敌人添加的行动列表中
