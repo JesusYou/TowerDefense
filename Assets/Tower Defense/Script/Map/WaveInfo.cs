@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WaveInfo : MonoBehaviour
 {
-    public float defaultWaveTimeout = 5f;
+    public float defaultWaveTimeout = 10f;
     public List<float> wavesTimeout = new List<float>();
 
     // Start is called before the first frame update
