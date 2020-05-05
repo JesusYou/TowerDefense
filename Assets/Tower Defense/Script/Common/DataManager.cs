@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 //保存数据格式的版本，用于检测存储的数据格式是否等于实际的数据格式
+[Serializable]
 public class DataVersion
 {
     public int major;
